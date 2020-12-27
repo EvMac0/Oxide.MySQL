@@ -150,9 +150,9 @@ namespace Oxide.Core.MySql.Libraries {
                     } catch (Exception ex) {
                         string message = "MySql command callback raised an exception";
                         if (Connection?.Plugin != null) {
-                            message += $" in '{Connection.Plugin.Name} v{Connection.Plugin.Version}' plugin";
+                            message += $" in '{Connection.Plugin.Name} v{Connection.Plugin.Version}' plugin ";
                         }
-
+                        message += $"Command: \"{this._cmd.CommandText}\" Params: \"{GetCommandParams()}\"";
                         Interface.Oxide.LogException(message, ex);
                     }
                     Connection?.Plugin?.TrackEnd();
