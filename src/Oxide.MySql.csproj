@@ -12,16 +12,25 @@
     <PackageIconUrl>icon.png</PackageIconUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
-    <TargetFrameworks>net35;net40;net45;net46;net48;netstandard2.0;netstandard2.1</TargetFrameworks>
+    <TargetFrameworks>net40</TargetFrameworks>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <NoWarn>NU1701</NoWarn>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Oxide.Core" Version="2.0.*" />
-    <Reference Include="MySql.Data">
-      <HintPath>Dependencies\MySql.Data.dll</HintPath>
+    <Reference Include="I18N">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RustSrv\server\RustDedicated_Data\Managed\I18N.dll</HintPath>
     </Reference>
-    <Content Include="Dependencies\*.*" PackagePath="lib\any" />
+    <Reference Include="I18N.West">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RustSrv\server\RustDedicated_Data\Managed\I18N.West.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RustSrv\server\RustDedicated_Data\Managed\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration.Install">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RustSrv\server\RustDedicated_Data\Managed\System.Configuration.Install.dll</HintPath>
+    </Reference>
     <None Include="..\resources\icon.png" Pack="true" PackagePath="\" />
   </ItemGroup>
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
